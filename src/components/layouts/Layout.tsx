@@ -11,7 +11,7 @@ export default function layout({ children }: Props) {
       <Helmet>
         <title>React Stater</title>
       </Helmet>
-      <div className="max-w-screen-2xl min-h-screen mx-auto">{children}</div>
+      <div className="max-w-screen-2xl h-screen mx-auto">{children}</div>
     </>
   );
 }

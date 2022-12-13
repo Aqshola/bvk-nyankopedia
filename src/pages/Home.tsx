@@ -1,22 +1,99 @@
-import React from "react";
-import Link from "src/components/links/Link";
+import React, { useEffect, useRef, useState } from "react";
+import Card from "src/components/card/Card";
 
 export default function Home() {
+  const [loading, setloading] = useState(false);
+  const container = useRef<HTMLDivElement>(null);
+  const [page, setpage] = useState(0)
+
+  useEffect(() => {
+    getListCat()
+  }, [])
+  
+
+  function scrollDownUpdate() {
+    if (container.current) {
+      const { scrollTop, scrollHeight, clientHeight } = container.current;
+      const bottomPosition = scrollTop + clientHeight;
+
+      if (bottomPosition >= scrollHeight - 10) {
+        console.log("loading...");
+      }
+    }
+  }
+
+  function getListCat(){
+
+  }
+
   return (
-    <div className="w-full p-10 h-full flex flex-col justify-center items-center text-center">
-      <h1 className="text-4xl text-transparent   bg-clip-text bg-gradient-to-r from-blue-500 to-emerald-500 ">
-        React Stater{" "}
-      </h1>
-      <p className="mt-5">
-        Simple React Stater with Routing, Tailwind, Jest and Cypress
-      </p>
-      <div className="mt-2 flex gap-2 w-full justify-center">
-        <Link to="/how" >
-          How
-        </Link>
-        <Link to="/about" >
-          About
-        </Link>
+    <div
+      ref={container}
+      onScroll={scrollDownUpdate}
+      className="overflow-y-scroll w-full p-5 md:p-10 h-full flex flex-col justify-center items-center text-center relative"
+    >
+      <h1 className="text-center font-bold text-3xl text-">Cat Explorer</h1>
+      <div className="py-2 px-2 rounded-md mt-2 w-full md:w-96 sticky top-0 backdrop-blur-sm bg-white/30 ">
+        <input
+          type="search"
+          name=""
+          id=""
+          placeholder="Search Cat"
+          className="placeholder:text-left w-full border p-2 rounded-md"
+        />
+        <h2 className="text-2xl text-left mt-5">List Cats</h2>
+      </div>
+      <div className="w-full max-w-screen-xl">
+        <div className="grid grid-cols-12 gap-3">
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <Card />
+          </div>
+        </div>
       </div>
     </div>
   );
