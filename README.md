@@ -1,4 +1,6 @@
-# Nyankopedia
+# [Nyankopedia](https://bvk-nyankopedia.vercel.app/)
+
+
 Simple list breed cat, using nyan cat theme
 ![image](https://user-images.githubusercontent.com/52363719/207887121-deffb3f4-3c63-4268-8aa7-71b135effb85.png)
 
@@ -16,6 +18,12 @@ Simple list breed cat, using nyan cat theme
 - React lazy-load-image-component
 - Jest, React Testing Library
 - Cypress
+
+## What i've done
+- Developing
+- Testing (using Jest + RTL & Cypress)
+- Deployment (Vercel)
+
 ## How to
 - `` npm install ``
 - Start React -> ``npm start``
