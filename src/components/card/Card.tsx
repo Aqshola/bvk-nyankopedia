@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
-import { Cat, DetailCat } from "src/types/types";
+import { Cat} from "src/types/types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import useDataUrl from "src/hooks/useDataUrl";
