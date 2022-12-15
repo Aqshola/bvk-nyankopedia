@@ -1,9 +1,28 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { cleanup, render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText("React Stater");
-  expect(linkElement).toBeInTheDocument();
+describe("Home", () => {
+  beforeEach(() => {
+    // eslint-disable-next-line testing-library/no-render-in-setup
+    render(<App />);
+  });
+
+  it("Should have heading", () => {
+    const title = screen.getByText("Nyankopedia");
+    expect(title).toBeInTheDocument();
+  });
+
+
+  it("Should show loading state", () => {
+    const loading = screen.getByLabelText("loading");
+    expect(loading).toBeTruthy()
+  });
+  it("Should have initial nyan 10 card", () => {
+    setTimeout(() => {
+      const card = screen.getAllByTestId("card");
+      expect(card.length).toEqual(10);
+    }, 5000);
+  });
 });
+

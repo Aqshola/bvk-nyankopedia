@@ -1,11 +1,22 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+
 
 export default function Loading() {
   return (
-    <div className='w-10 h-10 block rounded-full border-4 border-gray-200 border-t-blue-600 animate-spin'>
-
-    </div>
-  )
+    <svg
+    aria-label="loading"
+    className="animate-spin"
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.22222 6.66667V4.44444H4.44444V2.22222H6.66667V0H28.8889V2.22222H31.1111V4.44444H33.3333V6.66667H35.5556V4.44444V2.22222H40V15.5556H26.6667V11.1111H31.1111V8.88889H28.8889V6.66667H26.6667V4.44444H11.1111V6.66667H8.88889V8.88889H6.66667V11.1111H4.44444V28.8889H6.66667V31.1111H8.88889V33.3333H11.1111V35.5556H26.6667V33.3333H28.8889V31.1111H31.1111V28.8889H33.3333V26.6667H37.7778V33.3333H35.5556V35.5556H33.3333V37.7778H31.1111V40H6.66667V37.7778H4.44444V35.5556H2.22222V33.3333H0V6.66667H2.22222Z"
+        fill="white"
+      />
+    </svg>
+  );
 }

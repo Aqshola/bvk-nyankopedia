@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import React, { FormEvent, useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import Card from "src/components/card/Card";
 import Loading from "src/components/loading/Loading";
 import useQuery from "src/hooks/useQuery";
@@ -114,13 +114,16 @@ export default function Home() {
   return (
     <div
       ref={container}
-      className="w-full p-5 md:p-10 h-full flex flex-col justify-center items-center text-center relative"
+      className={"w-full p-5 md:p-10 h-full flex flex-col justify-center items-center text-center relative "}
     >
-      <h1 className="text-center font-bold text-5xl text-">Cat Explorer</h1>
+      <div>
+        <img src="/image/nyan.png" className="flex w-full h-full" alt="" />
+      </div>
+      <Link to={"/"} className="text-center font-bold text-5xl text-pink-primary">Nyankopedia</Link>
       <div
         className={clsx(
           "z-50 py-2 md:px-20 rounded-md mt-5 w-full transition-all flex items-center justify-between",
-          currScroll > 10 && ["sticky top-0 backdrop-blur-sm bg-white/30"]
+          currScroll > 10 && ["sticky top-0 bg-blue-primary"]
         )}
       >
         <h2 className="text-2xl text-left">List Cats</h2>
@@ -129,18 +132,17 @@ export default function Home() {
           onChange={searchCat}
           type="search"
           placeholder="Search Cat"
-          className="placeholder:text-left border p-2 rounded-md"
+          className="placeholder:text-left border p-1 px-2 border-black rounded-md bg-blue-primary"
         />
       </div>
       <div className="w-full max-w-screen-xl mt-2">
         <div className="grid grid-cols-12 gap-3">
           {!loading.current && listCat.length === 0 && (
             <div className="col-span-12 mt-10">
-              <h3 className="text-3xl">No Cat 😔</h3>
+              <h3 className="text-3xl">No Nyan 😔</h3>
             </div>
           )}
-          {!loading.current &&
-            listCat.length > 0 &&
+          { listCat.length > 0 &&
             listCat.map((el) => (
               <div key={el.id} className="col-span-12 md:col-span-3">
                 <Card dataCat={el} />

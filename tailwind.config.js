@@ -4,7 +4,23 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        'pixel':[ 'VT323','monospace']
+      },
+      colors:{
+        pink:{
+          primary:"#FD98FD"
+        },
+        blue:{
+          primary:"#003366"
+        },
+        yellow:{
+          primary:"#FFFF00"
+        }
+
+      }
+    },
   },
   plugins: [],
 }

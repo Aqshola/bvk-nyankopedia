@@ -36,7 +36,7 @@ export interface Cat {
     wikipedia_url:      string;
     hypoallergenic:     number;
     reference_image_id: string;
-    image:              Image;
+    image?:              Image;
 }
 
 export interface Image {

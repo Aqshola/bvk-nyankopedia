@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    @apply font-pixel;
+}
+
+body{
+  @apply bg-blue-primary
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-blue-primary
+    
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pink-primary rounded-md transition-all
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-yellow-primary
+  }
