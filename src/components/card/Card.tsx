@@ -18,7 +18,7 @@ export default function Card({ dataCat }: Props) {
   }
 
   return (
-    <div data-test-id="card" className="w-full  border rounded-md p-2 transition-shadow hover:shadow-md">
+    <div data-test-id="card" className="card w-full  border rounded-md p-2 transition-shadow hover:shadow-md">
       <div className="w-full h-[150px] flex object-cover rounded-md relative justify-center items-center">
         {!dataCat.image && (
           <img src="/image/nyan.png" className="flex w-full h-full" alt="" />
