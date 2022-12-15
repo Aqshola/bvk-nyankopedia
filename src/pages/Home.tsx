@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import React, { FormEvent, useEffect, useRef, useState } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Card from "src/components/card/Card";
 import Loading from "src/components/loading/Loading";
 import useQuery from "src/hooks/useQuery";
@@ -14,27 +14,25 @@ export default function Home() {
   const [lastPage, setlastPage] = useState(false);
   const [search, setsearch] = useState("");
   const navigate = useNavigate();
-  
 
   const page = useRef(0);
   const loading = useRef(true);
-  const init = useRef(true)
+  const init = useRef(true);
 
-  const searchParam=useQuery().get("search");
-  
+  const searchParam = useQuery().get("search");
 
   window.onscroll = scrollDownUpdate;
   useEffect(() => {
-    if(!init.current) return
+    if (!init.current) return;
 
-    if(searchParam){
-      handleSearch(searchParam)
-      setsearch(searchParam)
-    }else{
+    if (searchParam) {
+      handleSearch(searchParam);
+      setsearch(searchParam);
+    } else {
       getListCat(page.current);
     }
     document.addEventListener("scroll", scrollDownUpdate);
-    init.current=false
+    init.current = false;
     return window.removeEventListener("scroll", scrollDownUpdate);
   }, []);
 
@@ -114,15 +112,22 @@ export default function Home() {
   return (
     <div
       ref={container}
-      className={"w-full p-5 md:p-10 h-full flex flex-col justify-center items-center text-center relative "}
+      className={
+        "w-full p-5 md:p-10 h-full flex flex-col justify-center items-center text-center relative "
+      }
     >
       <div>
         <img src="/image/nyan.png" className="flex w-full h-full" alt="" />
       </div>
-      <Link to={"/"} className="text-center font-bold text-5xl text-pink-primary">Nyankopedia</Link>
+      <Link
+        to={"/"}
+        className="text-center font-bold text-6xl text-pink-primary"
+      >
+        Nyankopedia
+      </Link>
       <div
         className={clsx(
-          "z-50 py-2 md:px-20 rounded-md mt-5 w-full transition-all flex items-center justify-between",
+          "z-50 py-2 md:px-20 rounded-md mt-16 w-full transition-all flex items-center justify-between",
           currScroll > 10 && ["sticky top-0 bg-blue-primary"]
         )}
       >
@@ -142,7 +147,7 @@ export default function Home() {
               <h3 className="text-3xl">No Nyan 😔</h3>
             </div>
           )}
-          { listCat.length > 0 &&
+          {listCat.length > 0 &&
             listCat.map((el) => (
               <div key={el.id} className="col-span-12 md:col-span-3">
                 <Card dataCat={el} />
