@@ -68,11 +68,11 @@ export default function Card({ dataCat }: Props) {
       >
         <table className="border-t-2 w-full">
           <tbody>
-            <tr className="text-left text-sm pt-2">
+            {/* <tr className="text-left text-sm pt-2">
               <td>Weight</td>
               <td>:</td>
               <td>{dataCat.weight.imperial}</td>
-            </tr>
+            </tr> */}
             <tr className="text-left text-sm ">
               <td>Life Span</td>
               <td>:</td>
